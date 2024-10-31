@@ -2,17 +2,18 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",  // Changed to "Node" for improved compatibility
     "strict": true,
     "skipLibCheck": true,
-    "lib": [
-      "ESNext"
-    ],
-    "types": [
-      "node",
-      "@cloudflare/workers-types/2023-07-01"
-    ],
+    "lib": ["ESNext"],
+    "types": ["node", "@cloudflare/workers-types/2023-07-01"],
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
+    "jsxImportSource": "hono/jsx",
+    "esModuleInterop": true,     // Enables compatibility with CommonJS modules
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,   // If you import JSON modules, enables support
+    "allowSyntheticDefaultImports": true // Allows default imports from non-ES modules
   },
+  "include": ["src/**/*", "api/**/*"],  // Include paths to your source files
+  "exclude": ["node_modules"]
 }

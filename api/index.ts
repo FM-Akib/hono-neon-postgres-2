@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { serve } from '@hono/node-server';
-import { UserRoutes } from './routes/routes'
+import { UserRoutes } from '../src/routes/routes'
 const app = new Hono()
 
 
